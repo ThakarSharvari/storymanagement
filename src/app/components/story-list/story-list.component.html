@@ -1,0 +1,26 @@
+<table class="table table-borderless listScroll" (scroll)="tableScroll($event)" #table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>URL</th>
+            <th>Created_at</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let story of storyList; let i=index" (click)="viewRowData(story.objectID)">
+            <td>{{i}}</td>
+            <td>{{story.title}}</td>
+            <td [matTooltip]="story.url">
+                <span class="text-wrap">{{story.url}}</span>
+            </td>
+            <td>{{story.created_at}}</td>
+            <td>{{story.author}}</td>
+        </tr>
+        <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Loading Data...</p>
+        </ngx-spinner>
+    </tbody>
+</table>

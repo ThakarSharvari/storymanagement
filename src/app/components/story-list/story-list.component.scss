@@ -1,0 +1,18 @@
+.listScroll{
+    display: inline-block;
+    height: 650px;
+    overflow-y: scroll;
+    width: auto;
+}
+.text-wrap{
+    display: block;
+    width: 295px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+::ng-deep .mat-tooltip{
+    font-size: medium !important;
+    word-break: break-all !important;
+    white-space: normal !important;
+}
